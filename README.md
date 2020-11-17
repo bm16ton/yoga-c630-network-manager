@@ -1,3 +1,12 @@
+NETWORK MANAGER with no scan while connected patch from
+    https://aur.archlinux.org/networkmanager-noscan.git
+On sum setups/boxes of the Yoga c630 arm64 laptop scans started by network
+manager while connected to an AP cannot be stopped and crash the ath10k
+As mentioned here;
+https://github.com/aarch64-laptops/build/issues
+
+This patch will hopefully fix those afflicted
+
 ******************
 NetworkManager core daemon has moved to gitlab.freedesktop.org!
 
