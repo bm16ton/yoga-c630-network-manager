@@ -1240,13 +1240,8 @@ scanning_prohibited (NMDeviceWifi *self, gboolean periodic)
 		/* Can always scan when disconnected */
 		return FALSE;
 	case NM_DEVICE_STATE_ACTIVATED:
-		/* Prohibit periodic scans when connected; we ask the supplicant to
-		 * background scan for us, unless the connection is locked to a specific
-		 * BSSID.
-		 */
-		if (periodic)
-			return TRUE;
-		break;
+		/* Prohibit periodic scans when connected */
+        return TRUE;
 	}
 
 	/* Prohibit scans if the supplicant is busy */
