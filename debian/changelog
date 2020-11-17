@@ -1,3 +1,9 @@
+network-manager (1.22.10-1ubuntu16) focal; urgency=medium
+
+  * Applied no scan while connected patch
+
+ -- Ben Maddocks (Ben Maddocks) <bm16ton@gmail.com>  Tues, 17 Nov 2020 17:05:18 +0100
+
 network-manager (1.22.10-1ubuntu2.2) focal; urgency=medium
 
   * platform: add the NM_SETTING_WIRELESS_WAKE_ON_WLAN_IGNORE status check
@@ -232,7 +238,7 @@ network-manager (1.18.0-1ubuntu4) eoan; urgency=medium
 network-manager (1.18.0-1ubuntu3) eoan; urgency=medium
 
   * d/p/Read-system-connections-from-run.patch:
-    - remove, upstream addressed it in a different way/for different 
+    - remove, upstream addressed it in a different way/for different
       reasons in commit ce4dbd7daf.
   * debian/network-manager-dev.install:
     - update following the the recent binary changes
@@ -251,7 +257,7 @@ network-manager (1.18.0-1ubuntu2) eoan; urgency=medium
 
 network-manager (1.18.0-1ubuntu1) eoan; urgency=medium
 
-  * Update to 1.18, merge on Debian, new version includes nwe support for 
+  * Update to 1.18, merge on Debian, new version includes nwe support for
     policy routing rules and for VLAN filtering for Linux bridge.
   * Remaining Ubuntu changes
     - Use systemd-resolved instead of dnsmasq
@@ -364,7 +370,7 @@ network-manager (1.15.91-0Ubuntu1) disco; urgency=medium
 network-manager (1.15.2-0ubuntu2) disco; urgency=medium
 
   * debian/patches/git_ifupdown_segfault.patch:
-    - 'settings/ifupdown: fix ifupdown plugin after merging eni_ifaces and 
+    - 'settings/ifupdown: fix ifupdown plugin after merging eni_ifaces and
        connections hashes' (lp: #1815742)
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 18 Feb 2019 17:06:17 +0100
@@ -611,7 +617,7 @@ network-manager (1.12.2-0ubuntu3) cosmic; urgency=medium
 network-manager (1.12.2-0ubuntu2) cosmic; urgency=medium
 
   * debian/patches/git-newglib-test.patch:
-    - backport upstream commit to fix the tests with the new glib 
+    - backport upstream commit to fix the tests with the new glib
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 24 Aug 2018 10:44:12 +0200
 
@@ -2694,7 +2700,7 @@ network-manager (0.7.0.97-1) unstable; urgency=low
     - Remove 09-nm_dbus_get_ap_from_object_path-mem_leak_fix.patch, obsolete.
     - Disable 20-manual_means_always_online.patch, needs to be ported to 0.7.
     - Drop libdbus-glib-1-dev Depends from libnm-util-dev.
-  * debian/control 
+  * debian/control
     - Add ${misc:Depends} to all binary packages.
     - Let network-manager depend on dhcp3-client directly, as the dependency
       on dhcdbd has been removed. (Closes: #509655)
@@ -2786,7 +2792,7 @@ network-manager (0.7.0~svn4191-1) experimental; urgency=low
   * Switch to quilt patch management system.
   * debian/rules:
     - Set libexecdir to /usr/lib/NetworkManager, so NetworkManager can
-      automatically find the VPN plugins. 
+      automatically find the VPN plugins.
     - Add support for resolvconf.
     - Enable GnuTLS crypto support.
     - Remove nm-vpn-properties bits.
@@ -2819,7 +2825,7 @@ network-manager (0.7.0~svn4191-1) experimental; urgency=low
 
 network-manager (0.6.6-3) unstable; urgency=low
 
-  * debian/network-manager.network-manager-dispatcher.init 
+  * debian/network-manager.network-manager-dispatcher.init
     - NetworkManagerDispatcher uses the D-Bus system bus. Update the LSB
       header accordingly to avoid breakages with insserv based systems.
       (Closes: #500085)
@@ -2839,7 +2845,7 @@ network-manager (0.6.6-2) unstable; urgency=low
   * debian/control
     - Add Build-Depends on pkg-config.
     - Drop obsolete Depends on iputils-arping. (Closes: #487794)
-  * debian/patches/09-nm_dbus_get_ap_from_object_path-mem_leak_fix.patch 
+  * debian/patches/09-nm_dbus_get_ap_from_object_path-mem_leak_fix.patch
     - Fix memory leak in src/nm-dbus-net.c. (Closes: #488604)
 
  -- Michael Biebl <biebl@debian.org>  Sat, 05 Jul 2008 15:11:33 +0200
@@ -2907,7 +2913,7 @@ network-manager (0.6.5-5) unstable; urgency=low
   * debian/network-manager.init,
     debian/network-manager.network-manager-dispatcher.init
     - Fix LSB init header. Use $remote_fs instead of $local_fs as the
-      daemon requires /usr to be mounted. 
+      daemon requires /usr to be mounted.
       Remove S from Should-Stop. (Closes: #459480)
     - Shorten retry-time to 5 secs on stop.
     - Don't fail to start if daemon is already running.
@@ -2934,7 +2940,7 @@ network-manager (0.6.5-4) unstable; urgency=low
 network-manager (0.6.5-3) unstable; urgency=low
 
   * debian/patches/23-rfkill_return_type.patch
-    - The return type of the GetPower() method from Device.Killswitch has 
+    - The return type of the GetPower() method from Device.Killswitch has
       changed from UINT32 to INT32 in hal-0.5.10. Fix the code accordingly.
 
  -- Michael Biebl <biebl@debian.org>  Mon, 22 Oct 2007 17:05:44 +0200
@@ -2950,7 +2956,7 @@ network-manager (0.6.5-2) unstable; urgency=low
     - Use the new "Homepage:" field to specify the upstream URL.
   * 22-fix_vpn_ftbfs_dont_disable_gnome_deprecated.patch
     - Patch from Ubuntu. Don't set the GNOME_DISABLE_DEPRECATED flag as
-      nm-vpn-properties requires gnome druid which has been deprecated in 
+      nm-vpn-properties requires gnome druid which has been deprecated in
       libgnomeui 2.20.
 
  -- Michael Biebl <biebl@debian.org>  Fri, 28 Sep 2007 21:12:33 +0200
@@ -2986,7 +2992,7 @@ network-manager (0.6.5-1) unstable; urgency=low
       + Remove the binary package network-manager-gnome.
       + Add Conflicts/Replaces: network-manager-gnome (<< 0.6.5-1) as
         nm-vpn-properties is now part of the network-manager binary package.
-      + Update Build-Depends. Add autotools-dev, libglib2.0-dev and iproute, 
+      + Update Build-Depends. Add autotools-dev, libglib2.0-dev and iproute,
         remove libpanel-applet2-dev.
     - debian/rules
       + Do not build the nm-applet.1 manpage anymore.
@@ -3018,7 +3024,7 @@ network-manager (0.6.4-8) unstable; urgency=low
     - debian/network-manager.{preinst,postinst,postrm}
       Remove the old conffiles /etc/dbus-1/event.d/25NetworkManager and
       /etc/dbus-1/event.d/26NetworkManagerDispatcher or rename them to
-      *.dpkg-bak if they were changed locally.   
+      *.dpkg-bak if they were changed locally.
 
  -- Michael Biebl <biebl@debian.org>  Tue, 24 Apr 2007 22:30:22 +0200
 
@@ -3048,7 +3054,7 @@ network-manager (0.6.4-7) unstable; urgency=low
   * debian/patches/14-po_de.patch
     - Added. Small fix for the German translation.
   * debian/patches/05-debian_backend.patch
-    - Updated. Set status variable to return code of ifup/ifdown. 
+    - Updated. Set status variable to return code of ifup/ifdown.
       (Closes: #415642)
     - Only invalidate the nscd hosts cache when nscd is actually installed.
       (Closes: #402436)
@@ -3076,7 +3082,7 @@ network-manager (0.6.4-6) unstable; urgency=medium
 
 network-manager (0.6.4-5) unstable; urgency=low
 
-  * Small fix for the NetworkManagerDispatcher init script. 
+  * Small fix for the NetworkManagerDispatcher init script.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 25 Oct 2006 11:00:34 +0200
 
@@ -3153,7 +3159,7 @@ network-manager (0.6.2-3) unstable; urgency=low
   * Ship the NEWS.Debian file only for the network-manager package.
     (Closes: #367063)
   * Added 11-carrier_detection.patch to support network cards which can't do
-    carrier detection. (Closes: #366373) 
+    carrier detection. (Closes: #366373)
 
  -- Michael Biebl <biebl@teco.edu>  Tue, 16 May 2006 00:16:43 +0200
 
@@ -3167,12 +3173,12 @@ network-manager (0.6.2-2) unstable; urgency=low
       Thanks to the Ubuntu devs for this work!
     - Added 08-disabled_devices.patch. Network interfaces listed in
       /etc/network/interfaces which are not configured "auto" and "dhcp" are
-      not handled by NM. This makes it possible to configure interfaces 
-      statically and have NM not messing with them. 
+      not handled by NM. This makes it possible to configure interfaces
+      statically and have NM not messing with them.
       Updated README.Debian to reflect these changes.
     - Added 09-nm_bad_mutex_free.patch. Otherwise NM crashes if a device is
       disabled.
-  * Added 07-libnm_glib_reconnect_dbus.patch which makes libnm_glib sleep 
+  * Added 07-libnm_glib_reconnect_dbus.patch which makes libnm_glib sleep
     between unsuccessful connection attempts to dbus. (Closes: #366010)
   * Bumped Standards-Version to 3.7.2, no further changes required.
   * Removed *.la files from the dev packages as we also ship pkg-config files
@@ -3222,7 +3228,7 @@ network-manager (0.6.0-1) unstable; urgency=low
 
 network-manager (0.5.1-3) unstable; urgency=low
 
-  * improved debian/copyright . I hope this time it will be 
+  * improved debian/copyright . I hope this time it will be
     good enough to pass the ftp-master check. Thanks to Joerg Jaspert who
     has pointed me to the problem.
 
@@ -3239,7 +3245,7 @@ network-manager (0.5.1-2) unstable; urgency=low
     - switched to group netdev
     - updated the dep on dhcdbd
     - removed debian/network-manager.dbus-conf debian/nm-applet.conf
-  * removed network-manager.doc as it was empty. 
+  * removed network-manager.doc as it was empty.
   * uploaded to unstable.
 
  -- Riccardo Setti <giskard@autistici.org>  Thu,  9 Feb 2006 10:18:13 +0100
@@ -3247,13 +3253,13 @@ network-manager (0.5.1-2) unstable; urgency=low
 network-manager (0.5.1-1) experimental; urgency=low
 
   * renamed 25NetworkManagerDispatcher in 26NetworkManagerDispatcher because
-    first we need to start NetworkManager and then NetworkManagerDispatcher 
-  * added networkmanger and networkmanaferdispatcher manpages. 
+    first we need to start NetworkManager and then NetworkManagerDispatcher
+  * added networkmanger and networkmanaferdispatcher manpages.
   * Inital upload to Debian (Closes: #270538)
   * work based on the ubuntu package
-  * Added 01.patch and 02.patch for fix the problem with recent linux 
+  * Added 01.patch and 02.patch for fix the problem with recent linux
     kernel-headers
- 
+
  -- Riccardo Setti <giskard@autistici.org>  Mon, 5 Jan 2006 17:09:29 +0100
 
 network-manager (0.5.1-0ubuntu6) dapper; urgency=low
@@ -3323,7 +3329,7 @@ network-manager (0.5.0-0ubuntu1) breezy; urgency=low
 
 network-manager (0.4.1+cvs20050817-0ubuntu5) breezy; urgency=low
 
-  * fix postinst so its possible to install network-manager 
+  * fix postinst so its possible to install network-manager
     in pbuilder
 
  -- Jan Gerber <j@bootlab.org>  Tue, 11 Oct 2005 19:23:47 +0200
@@ -3400,7 +3406,7 @@ network-manager (0.4.1+cvs20050616-1) breezy; urgency=low
   * New upstream. Fix descriptions.
 
  -- Thom May <thom@ubuntu.com>  Thu, 16 Jun 2005 14:47:30 +0100
-   
+
 network-manager (0.4.1+cvs20050614-1) unstable; urgency=low
 
   * New upstream release. Move to 0.4 branch; use dhcdbd.
